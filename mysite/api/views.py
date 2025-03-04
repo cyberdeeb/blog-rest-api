@@ -25,5 +25,5 @@ class BlogPostBulkDelete(generics.DestroyAPIView):
     serializer_class = BlogPostSerializer
 
     def delete(self, request, *args, **kwargs):
-        self.get_queryset.delete()
+        self.get_queryset().delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
