@@ -11,7 +11,7 @@ class BlogPostListCreate(generics.ListCreateAPIView):
     filter_backends = [filters.SearchFilter]
 
     # Enables partial search
-    search_fields = ['title']
+    search_fields = ['title', 'tag', 'published_date']
 
 # Filter & delete
 class BlogPostRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
