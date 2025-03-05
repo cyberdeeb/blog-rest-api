@@ -2,23 +2,23 @@
 
 ## Overview
 
-This RESTful API allows users to perform basic CRUD (Create, Read, Update, Delete) operations on blog articles. The API provides the following features:
+This RESTful API allows users to perform basic CRUD (Create, Read, Update, Delete) operations on blog blogposts. The API provides the following features:
 
-- View a list of blog articles with optional filters (e.g., publishing date, tags).
-- View a single article by its ID.
-- Create new articles.
-- Update existing articles.
-- Delete articles by their ID.
+- View a list of blogposts blogposts with optional filters (e.g., publishing date, tags).
+- View a single blogpost by its ID.
+- Create new blogposts.
+- Update existing blogposts.
+- Delete blogposts by their ID.
 
 The API is built with Django (Python) and uses PostgreSQL (or any SQL database of your choice) for relational database management.
 
 ## Features
 
-- Create a new blog article.
-- Read blog articles: list all or get one by ID.
-- Update an existing blog article.
-- Delete an article by its ID.
-- Filter articles based on publishing date or tags.
+- Create a new blogpost.
+- Read blogposts: list all or get one by ID.
+- Update an existing blogpost.
+- Delete an blogpost by its ID or bulk delete.
+- Filter blogposts based on title, publishing date, or tags.
 
 ## Tech Stack
 
@@ -39,31 +39,35 @@ Before starting, ensure you have the following installed:
 
 ## Endpoints
 
-### GET /articles
-Retrieves a list of articles.  
+### GET blogposts/
+Retrieves a list of blogs.  
 **Optional query parameters**:
+- `title` (comma-separated tags)
 - `tags` (comma-separated tags)
 - `date` (to filter by publishing date)
 
-### GET /articles/{id}
-Retrieves a single article by its ID.
+### GET blogposts/{id}
+Retrieves a single blogpost by its ID.
 
-### POST /articles
-Creates a new article.  
+### POST blogposts/
+Creates a new blogpost.  
 **Required fields in the request body**:
 - `title`
 - `content`
 - `tags` (optional)
 
-### PUT /articles/{id}
-Updates an existing article by its ID.  
+### PUT /blogposts/{id}
+Updates an existing blogpost by its ID.  
 **Required fields in the request body**:
 - `title`
 - `content`
 - `tags` (optional)
 
-### DELETE /articles/{id}
-Deletes an article by its ID.
+### DELETE blogposts/{id}
+Deletes an blogpost by its ID.
+
+### DELETE blogposts/delete-all
+Bulk deletes all blogposts.
 
 ## Testing
 
